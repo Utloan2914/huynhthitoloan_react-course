@@ -30,7 +30,6 @@ let students = [
       return studentsArray;
     }
   }
-  
   // Original array of students
   console.log("Original students array:");
   console.log(students);

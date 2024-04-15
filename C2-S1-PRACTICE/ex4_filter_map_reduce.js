@@ -13,7 +13,7 @@ function squareNumbers(arr) {
 }
 
 // Function to compute the sum of array elements
-// You need to use the array.reduce() function
+// You need to use the array.reduce() functions
 function sumArray(arr) {
   return arr.reduce((acc, curr) => acc + curr, 0);
 }

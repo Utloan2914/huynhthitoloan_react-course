@@ -23,8 +23,6 @@ function findAverage(numbers) {
   let scores = [85, 90, 75, 95, 80];
   let averageScore = findAverage(scores);
   console.log("Average score:", averageScore);
-
-
 //Answer
 //for (let i = 0; i < numbers.length; i++) {} sai <= sẽ lỗi vượt chỉ số index
 

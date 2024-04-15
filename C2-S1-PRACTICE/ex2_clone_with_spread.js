@@ -22,7 +22,6 @@
 
 // console.log("Original array:", originalArray); // original array should not be modified...
 // console.log("Updated array:", updatedArray);
-
 // Answer: 
 
 let originalArray = [1, 2, 3, 4, 5];

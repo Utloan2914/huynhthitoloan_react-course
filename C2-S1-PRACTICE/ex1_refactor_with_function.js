@@ -42,5 +42,6 @@ const total_price = (cart) => {
     return totalPrice;
 };
 
+
 let totalPrice = total_price(shoppingCart);
 console.log("Total price:", totalPrice);

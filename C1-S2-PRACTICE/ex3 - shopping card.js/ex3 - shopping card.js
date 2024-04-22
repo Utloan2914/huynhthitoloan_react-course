@@ -12,6 +12,7 @@ const PRODUCTS = [
 const SHOPPING_CART = [
   { id: 1, quantity: 2 },
   { id: 3, quantity: 1 },
+
 ];
 
 /**
@@ -44,9 +45,9 @@ function getCartTotalAmount() {
  * @param {*} productId  the product id to add
  */
 function addProductToCart(productId) {
-  const itemIndex = SHOPPING_CART.findIndex(item => item.id === productId);
-  if (itemIndex >= 0) {
-    SHOPPING_CART[itemIndex].quantity += 1;
+  const existingItem = SHOPPING_CART.find(item => item.id === productId);
+  if (existingItem) {
+    existingItem.quantity += 1;
   } else {
     SHOPPING_CART.push({ id: productId, quantity: 1 });
   }
@@ -67,19 +68,16 @@ function addProductToCart(productId) {
  * @param {*} productId  the product id to add
  */
 function removeProductFromCart(productId) {
-  for (let i = 0; i < SHOPPING_CART.length; i++) {
-    if (SHOPPING_CART[i].id === productId) {
-      if (SHOPPING_CART[i].quantity > 1) {
-        SHOPPING_CART[i].quantity = SHOPPING_CART[i].quantity - 1;
-      } else {
-        SHOPPING_CART.splice(i, 1);
-      }
-      break;
+  const itemToRemove = SHOPPING_CART.find(item => item.id === productId);
+  if (itemToRemove) {
+    if (itemToRemove.quantity > 1) {
+      itemToRemove.quantity -= 1;
+    } else {
+      const indexToRemove = SHOPPING_CART.indexOf(itemToRemove);
+      SHOPPING_CART.splice(indexToRemove, 1);
     }
   }
 }
-
-
 // --------------------------------------------------------
 // TESTS ZONE
 // --------------------------------------------------------

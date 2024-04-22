@@ -13,7 +13,7 @@
 function transformToObjects(listOfNumbers) {
   let result = [];
   for (let num of listOfNumbers) {
-    result.push({ val: num });
+    result.push( { val: num } );
   }
   return result;
 }
